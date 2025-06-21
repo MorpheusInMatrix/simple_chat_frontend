@@ -5,6 +5,7 @@ import SpaceBetween from "@cloudscape-design/components/space-between";
 import Input from "@cloudscape-design/components/input";
 import Button from "@cloudscape-design/components/button";
 import simple_chat from "./api/simple_chat";
+import UploadImage from "./components/UploadImage";
 
 export default function App() {
   const [value, setValue] = useState("");
@@ -21,7 +22,7 @@ export default function App() {
   return (
     <SpaceBetween size="m">
       <Header variant="h1">Hello World!</Header>
-
+      <UploadImage />
       <Container>
         <SpaceBetween size="s">
           <span>Start editing to see some magic happen</span>

@@ -10,9 +10,13 @@ async function simple_chat(message) {
       "https://bvxnfs9720.execute-api.us-east-1.amazonaws.com/default/openai_chat",
       {
         method: "POST",
-        body: JSON.stringify({ prompt: message }),
+        body: JSON.stringify({
+          prompt: message,
+          url: "https://classopenaiimage.s3.us-east-1.amazonaws.com/test",
+        }),
       }
     );
+    console.log("response", response);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
