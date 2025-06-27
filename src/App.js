@@ -17,13 +17,15 @@ export default function App() {
   const [messages, setMessages] = useState([]);
 
   const triggerMessage = (prompt) => {
+    setMessages([]);
     connectWebSocket({
       url: "wss://kducywzxm7.execute-api.us-east-1.amazonaws.com/default/",
       onMessage: (message) => {
-        console.log(message);
-        setMessages((prevMessages) => [...prevMessages, message]);
-        if (message === "DONE") {
+        if (message === "[DONE]") {
+          // If detected DONE, close the websocket
           closeWebSocket();
+        } else {
+          setMessages((prevMessages) => [...prevMessages, message]);
         }
       },
       onOpen: () =>

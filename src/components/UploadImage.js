@@ -21,12 +21,16 @@ export default () => {
           "https://jyy48lmce7.execute-api.us-east-1.amazonaws.com/default/class_upload_image",
           {
             method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
             body: JSON.stringify({ data: base64Data, fileName: "test" }),
           }
         );
-        const result = await response.json();
+        console.log(response);
+        // const result = await response.json();
 
-        console.log(result.url);
+        // console.log(result.url);
       })();
     };
 
