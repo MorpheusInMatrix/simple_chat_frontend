@@ -4,11 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "@cloudscape-design/global-styles/index.css";
+import ShoppingAssistant from "./ShoppingAssistant";
+import ShoppingApp from "./ShoppingApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ShoppingApp />
   </React.StrictMode>
 );
 
